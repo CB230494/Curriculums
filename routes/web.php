@@ -63,3 +63,4 @@ Route::resource('cvs', CVController::class);
 
 Route::get('/cvs/{id}/download', [CVController::class, 'download'])->name('cvs.download');
 
+Route::get('/cvs/{id}', [CVController::class, 'show'])->name('cvs.show');

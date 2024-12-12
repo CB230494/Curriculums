@@ -114,8 +114,12 @@ a.btn:hover {
     <ul class="mt-4">
         @forelse($cvs as $cv)
             <li>{{ $cv->title }}</li>
+            
             <a href="{{ route('cvs.edit', $cv->id) }}" class="btn">Editar</a>
-       
+            <form action="{{ route('cvs.show', $cv->id) }}" method="GET" style="display:inline;">
+                @csrf
+                <button type="submit" class="btn">Mostrar Currículum</button>
+            </form>
             <form action="{{ route('cvs.destroy', $cv->id) }}" method="POST" style="display:inline;">
                 @csrf
                 @method('DELETE')

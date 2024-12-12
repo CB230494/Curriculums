@@ -117,6 +117,11 @@ class CVController extends Controller
     }
 
 
-
+    public function show($id)
+    {
+        $cv = CV::findOrFail($id);
+        return view('cvs.show', compact('cv'));
+    }
+    
 
 }
